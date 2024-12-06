@@ -19,7 +19,7 @@ import ShoppingAccount from "./pages/shopping-view/account";
 function App() {
   return (
     <div className="flex flex-col overflow-hidden bg-white ">
-      <h1>Header Component</h1>
+      {/* <h1>Header Component</h1> */}
 
       <Routes>
         <Route path="/auth" element={<AuthLayout />}>
