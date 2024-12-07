@@ -9,8 +9,6 @@ const shopProductsRouter = require("./routes/shop/products-routes");
 const shopCartRouter = require("./routes/shop/cart-routes");
 
 
-//create a database connection -> u can also
-//create a separate file for this and then import/use that file here
 
 mongoose
   .connect("mongodb+srv://nelunika:2000@cluster0.3gzfe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
