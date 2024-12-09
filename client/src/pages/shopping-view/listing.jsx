@@ -1,14 +1,3 @@
-
-import React from 'react'
-
-function ShoppingListing() {
-  return (
-    <div>ShoppingListing</div>
-  )
-}
-
-export default ShoppingListing
-=======
 import ProductFilter from "@/components/shopping-view/filter";
 import ProductDetailsDialog from "@/components/shopping-view/product-details";
 import ShoppingProductTile from "@/components/shopping-view/product-tile";
@@ -150,11 +139,9 @@ function ShoppingListing() {
       );
   }, [dispatch, sort, filters]);
 
-
   useEffect(() => {
     if (productDetails !== null) setOpenDetailsDialog(true);
   }, [productDetails]);
-  
 
   console.log(productList, "productListproductListproductList");
 
@@ -216,4 +203,3 @@ function ShoppingListing() {
 }
 
 export default ShoppingListing;
-
