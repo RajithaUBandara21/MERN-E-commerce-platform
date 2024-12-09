@@ -1,5 +1,5 @@
 {
-<<<<<<< HEAD
+
     "compilerOptions": {
       "baseUrl": ".",
       "paths": {
@@ -7,12 +7,4 @@
       }
     }
   }
-=======
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
-}
->>>>>>> 7e1abda (Add to cart function created)
+
