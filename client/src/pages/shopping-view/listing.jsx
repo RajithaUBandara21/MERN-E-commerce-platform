@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React from 'react'
 
 function ShoppingListing() {
@@ -216,4 +216,4 @@ function ShoppingListing() {
 }
 
 export default ShoppingListing;
->>>>>>> 7e1abda (Add to cart function created)
+
