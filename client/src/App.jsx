@@ -15,11 +15,11 @@ import AuthRegister from "./pages/auth/register";
 import NotFound from "./pages/not-found";
 import ShoppingAccount from "./pages/shopping-view/account";
 import ShoppingCheckout from "./pages/shopping-view/checkout";
-import ShoppingHome from "./pages/shopping-view/home";
-import ShoppingListing from "./pages/shopping-view/listing";
-// import PaymentSuccessPage from "./pages/shopping-view/payment-success";
+import ShoppingHome from "../../shopping-view/home";
+import ShoppingListing from "../../shopping-view/listing";
+// import PaymentSuccessPage from "../../shopping-view/payment-success";
 // import PaypalReturnPage from "./pages/shopping-view/paypal-return";
-// import SearchProducts from "./pages/shopping-view/search";
+// import SearchProducts from "../../shopping-view/search";
 // import UnauthPage from "./pages/unauth-page";
 import { checkAuth } from "./store/auth-slice";
 
@@ -60,37 +60,27 @@ function App() {
           <Route path="login" element={<AuthLogin />} />
           <Route path="register" element={<AuthRegister />} />
         </Route>
-        <Route
-          path="/admin"
-          element={
-            <CheckAuth isAuthenticated={isAuthenticated} user={user}>
-              <AdminLayout />
-            </CheckAuth>
-          }
-        >
-          {/* <Route path="dashboard" element={<AdminDashboard />} /> */}
-          <Route path="products" element={<AdminProducts />} />
-          <Route path="orders" element={<AdminOrders />} />
-          <Route path="features" element={<AdminFeatures />} />
-        </Route>
-        <Route
-          path="/shop"
-          element={
-            // <CheckAuth isAuthenticated={isAuthenticated} user={user}>
-            // </CheckAuth>
-              <ShoppingLayout />
-          }
-        >
-          <Route path="home" element={<ShoppingHome />} />
-          <Route path="listing" element={<ShoppingListing />} />
-          <Route path="checkout" element={<ShoppingCheckout />} />
-          <Route path="account" element={<ShoppingAccount />} />
-          {/* <Route path="paypal-return" element={<PaypalReturnPage />} /> */}
-          {/* <Route path="payment-success" element={<PaymentSuccessPage />} /> */}
-          {/* <Route path="search" element={<SearchProducts />} /> */}
-        </Route>
-        {/* <Route path="/unauth-page" element={<UnauthPage />} /> */}
-        <Route path="*" element={<NotFound />} />
+
+
+
+        <Route path="/admin" element={<AdminLayout/>} >
+          <Route path="dashboard" element={<AdminDashbord/>} />
+          <Route path="products" element={<AdminProducts/>} />
+          <Route path="orders" element={<AdminOrders/>} />
+          <Route path="features" element={<AdminFeatures/>} />
+        
+         </Route>
+<Route path="/shop" element={<ShoppingLayout/>} >
+<Route path="home" element={<ShoppingHome/>} />
+<Route path="listning" element={<ShoppingListing/>} />
+<Route path="checkout" element={<ShoppingCheckout/>} />
+<Route path="account" element={<ShoppingAccount/>} />
+</Route>
+
+
+<Route path="*" element = {<NotFound/>} />
+
+
       </Routes>
     </div>
   );
