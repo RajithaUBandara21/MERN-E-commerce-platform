@@ -1,14 +1,4 @@
-<<<<<<< HEAD
-import React from 'react'
 
-function ShoppingHeader() {
-  return (
-    <div>ShoppingHeader</div>
-  )
-}
-
-export default ShoppingHeader
-=======
 import { HousePlug, LogOut, Menu, ShoppingCart, UserCog } from "lucide-react";
 import {
   Link,
@@ -178,4 +168,4 @@ function ShoppingHeader() {
 }
 
 export default ShoppingHeader;
->>>>>>> 7e1abda (Add to cart function created)
+
