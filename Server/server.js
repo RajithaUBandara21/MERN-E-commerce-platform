@@ -37,7 +37,7 @@ const PORT = 5000;
 
 app.use(
   cors({
-    origin: "http://localhost:5174",
+    origin: true,
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
