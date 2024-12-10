@@ -9,8 +9,8 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 4004
+EXPOSE 5000
 
-ENV NAME order
+ENV NAME server
 
 CMD ["npm", "start"]
