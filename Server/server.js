@@ -15,13 +15,24 @@ const shopReviewRouter = require("./routes/shop/review-routes");
 
 const commonFeatureRouter = require("./routes/common/feature-routes");
 
+const app = express();
+
+app.get('/api/auth', (req, res) => {
+  res.status(200).send('Auth route');
+});
+
+app.get('/api/shop/products', (req, res) => {
+  res.status(200).send('Products route');
+});
 
 mongoose
-  .connect("mongodb+srv://123:123@cluster0.nw8ab.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+  .connect("mongodb+srv://nelunikanuwanthi:0130@cluster0.c8mtj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => console.log("MongoDB connected"))
-  .catch((error) => console.log(error));
+  .catch((error) => {
+    console.error("MongoDB connection error:", error);
+    process.exit(1); // Exit the process with a failure code
+  });
 
-const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(
@@ -54,9 +65,14 @@ app.use("/api/shop/review", shopReviewRouter);
 
 app.use("/api/common/feature", commonFeatureRouter);
 
-app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));
+app.listen(PORT, (error) => {
+  if (error) {
+    console.error("Server startup error:", error);
+    process.exit(1); // Exit the process with a failure code
+  } else {
+    console.log(`Server is now running on port ${PORT}`);
+  }
+});
 
-// To update all dependencies, use the following commands:
-// 1. Install npm-check-updates globally: npm install -g npm-check-updates
-// 2. Update the dependencies in package.json: ncu -u
-// 3. Install the updated dependencies: npm install
+module.exports = app; // Export the app for testing
+

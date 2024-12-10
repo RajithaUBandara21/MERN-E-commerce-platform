@@ -1,0 +1,9 @@
+{
+  // ...existing code...
+  "scripts": {
+    // ...existing code...
+    "start": "nodemon Server/server.js",
+    "test": "jest"
+  },
+  // ...existing code...
+}
